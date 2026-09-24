@@ -4,372 +4,372 @@ import seaborn as sns
 
 
 df = pd.read_csv(r"C:\\Users\\Dell\\Downloads\\Statistics_Dataset.csv")
-# print(df)
-# print(df.head())
-# print(df.tail())
-# print(df.info())
+print(df)
+print(df.head())
+print(df.tail())
+print(df.info())
 
-# print("\nQ4. MEAN ORDER VALUE")
-# mean_order_value = df["order_value"].mean()
-# print("Mean Order Value =", mean_order_value)
-# print("\nTotal records:")
-# print(len(df))
-# print("\nMedian:")
-# print(df["order_value"].median())
-# print(df["product_category"].mode()[0])
-# print(df["payment_method"].mode()[0])
-# print("\nOrder Value Range:")
-# print(df["order_value"].max() - df["order_value"].min())
-# print("Delivery Time Range:")
-# print(df["delivery_time_min"].max() - df["delivery_time_min"].min())
+print("\nQ4. MEAN ORDER VALUE")
+mean_order_value = df["order_value"].mean()
+print("Mean Order Value =", mean_order_value)
+print("\nTotal records:")
+print(len(df))
+print("\nMedian:")
+print(df["order_value"].median())
+print(df["product_category"].mode()[0])
+print(df["payment_method"].mode()[0])
+print("\nOrder Value Range:")
+print(df["order_value"].max() - df["order_value"].min())
+print("Delivery Time Range:")
+print(df["delivery_time_min"].max() - df["delivery_time_min"].min())
 
-# Q8 - Order Value
-# print("\nOrder Value Variance:")
-# print(df["order_value"].var())
-# print("Order Value Standard Deviation:")
-# print(df["order_value"].std())
+Q8 - Order Value
+print("\nOrder Value Variance:")
+print(df["order_value"].var())
+print("Order Value Standard Deviation:")
+print(df["order_value"].std())
 
-# # Q9 - Delivery Time
-# print("\nDelivery Time Variance:")
-# print(df["delivery_time_min"].var())
+# Q9 - Delivery Time
+print("\nDelivery Time Variance:")
+print(df["delivery_time_min"].var())
 
-# print("Delivery Time Standard Deviation:")
-# print(df["delivery_time_min"].std())
+print("Delivery Time Standard Deviation:")
+print(df["delivery_time_min"].std())
 
-# #10 - Quartiles
-# print("\nQ1:")
-# print(df["order_value"].quantile(0.25))
+#10 - Quartiles
+print("\nQ1:")
+print(df["order_value"].quantile(0.25))
 
-# print("Q2:")
-# print(df["order_value"].quantile(0.50))
+print("Q2:")
+print(df["order_value"].quantile(0.50))
 
-# print("Q3:")
-# print(df["order_value"].quantile(0.75))
+print("Q3:")
+print(df["order_value"].quantile(0.75))
 
 
-# Q11. Calculate IQR of order_value
-# q1 = df["order_value"].quantile(0.25)
-# q3 = df["order_value"].quantile(0.75)
-# iqr = q3 - q1
-# print("Q11 - IQR:", iqr)
+Q11. Calculate IQR of order_value
+q1 = df["order_value"].quantile(0.25)
+q3 = df["order_value"].quantile(0.75)
+iqr = q3 - q1
+print("Q11 - IQR:", iqr)
 
-# # Q12. Find 25th, 50th and 90th percentiles
-# print("\nQ12 - Percentiles")
+# Q12. Find 25th, 50th and 90th percentiles
+print("\nQ12 - Percentiles")
 
-# print("25th:", df["order_value"].quantile(0.25))
-# print("50th:", df["order_value"].quantile(0.50))
-# print("90th:", df["order_value"].quantile(0.90))
+print("25th:", df["order_value"].quantile(0.25))
+print("50th:", df["order_value"].quantile(0.50))
+print("90th:", df["order_value"].quantile(0.90))
 
 
-# Q13. Compare mean and median
-# mean = df["order_value"].mean()
-# median = df["order_value"].median()
+Q13. Compare mean and median
+mean = df["order_value"].mean()
+median = df["order_value"].median()
 
-# print("\nQ13 - Mean:", mean)
-# print("Q13 - Median:", median)
+print("\nQ13 - Mean:", mean)
+print("Q13 - Median:", median)
 
-# if mean > median:
-#     print("Mean is greater than median")
-# elif mean < median:
-#     print("Mean is less than median")
-# else:
-#     print("Mean and median are equal")
+if mean > median:
+    print("Mean is greater than median")
+elif mean < median:
+    print("Mean is less than median")
+else:
+    print("Mean and median are equal")
 
 
-# Q14. Coefficient of Variation
-# mean_order = df["order_value"].mean()
-# std_order = df["order_value"].std()
+Q14. Coefficient of Variation
+mean_order = df["order_value"].mean()
+std_order = df["order_value"].std()
 
-# mean_delivery = df["delivery_time_min"].mean()
-# std_delivery = df["delivery_time_min"].std()
+mean_delivery = df["delivery_time_min"].mean()
+std_delivery = df["delivery_time_min"].std()
 
-# cv_order = (std_order / mean_order) * 100
-# cv_delivery = (std_delivery / mean_delivery) * 100
+cv_order = (std_order / mean_order) * 100
+cv_delivery = (std_delivery / mean_delivery) * 100
 
-# print("\nQ14 - CV Order Value:", cv_order, "%")
-# print("Q14 - CV Delivery Time:", cv_delivery, "%")
+print("\nQ14 - CV Order Value:", cv_order, "%")
+print("Q14 - CV Delivery Time:", cv_delivery, "%")
 
 
-# Q15. Average order value by product category
-# print("\nQ15 - Average Order Value by Category")
+Q15. Average order value by product category
+print("\nQ15 - Average Order Value by Category")
 
-# print(
-#     df.groupby("product_category")["order_value"].mean()
-# )
+print(
+    df.groupby("product_category")["order_value"].mean()
+)
 
 
-# Q16. Product category with highest median order value
-# print("\nQ16 - Highest Median Category")
+Q16. Product category with highest median order value
+print("\nQ16 - Highest Median Category")
 
-# median_category = df.groupby("product_category")["order_value"].median()
+median_category = df.groupby("product_category")["order_value"].median()
 
-# print(median_category)
+print(median_category)
 
-# print("Highest:",
-    #   median_category.idxmax())
+print("Highest:",
+      median_category.idxmax())
 
-# Q17. Histogram of order_value
-# print("\nQ17 - Histogram")
+Q17. Histogram of order_value
+print("\nQ17 - Histogram")
 
-# plt.hist(df["order_value"], bins=10)
-# plt.xlabel("Order Value")
-# plt.ylabel("Number of Customers")
-# plt.title("Order Value Histogram")
-# plt.show()
+plt.hist(df["order_value"], bins=10)
+plt.xlabel("Order Value")
+plt.ylabel("Number of Customers")
+plt.title("Order Value Histogram")
+plt.show()
 
 
-# Q18. Histogram of delivery_time_min
-# print("\nQ18 - Delivery Time Histogram")
+Q18. Histogram of delivery_time_min
+print("\nQ18 - Delivery Time Histogram")
 
-# plt.hist(df["delivery_time_min"], bins=10)
-# plt.xlabel("Delivery Time")
-# plt.ylabel("Number of Customers")
-# plt.title("Delivery Time Histogram")
-# plt.show()
+plt.hist(df["delivery_time_min"], bins=10)
+plt.xlabel("Delivery Time")
+plt.ylabel("Number of Customers")
+plt.title("Delivery Time Histogram")
+plt.show()
 
-# Q19. Boxplots
-# print("\nQ19 - Boxplots")
+Q19. Boxplots
+print("\nQ19 - Boxplots")
 
-# plt.boxplot(df["order_value"])
-# plt.title("Order Value Boxplot")
-# plt.ylabel("Order Value")
-# plt.show()
+plt.boxplot(df["order_value"])
+plt.title("Order Value Boxplot")
+plt.ylabel("Order Value")
+plt.show()
 
-# plt.boxplot(df["delivery_time_min"])
-# plt.title("Delivery Time Boxplot")
-# plt.ylabel("Delivery Time")
-# plt.show()
+plt.boxplot(df["delivery_time_min"])
+plt.title("Delivery Time Boxplot")
+plt.ylabel("Delivery Time")
+plt.show()
 
-# Q20. Boxplot of order_value for each product category
-# print("\nQ20 - Category Boxplot")
+Q20. Boxplot of order_value for each product category
+print("\nQ20 - Category Boxplot")
 
-# sns.boxplot(
-#     x="product_category",
-#     y="order_value",
-#     data=df
-# )
+sns.boxplot(
+    x="product_category",
+    y="order_value",
+    data=df
+)
 
-# plt.title("Order Value by Product Category")
-# plt.xticks(rotation=45)
-# plt.show()
+plt.title("Order Value by Product Category")
+plt.xticks(rotation=45)
+plt.show()
 
 
-# Q21. Bar charts
+Q21. Bar charts
 
-# print("\nQ21 - Bar Charts")
+print("\nQ21 - Bar Charts")
 
-# df["product_category"].value_counts().plot(kind="bar")
-# plt.title("Product Category")
-# plt.xlabel("Category")
-# plt.ylabel("Count")
-# plt.show()
+df["product_category"].value_counts().plot(kind="bar")
+plt.title("Product Category")
+plt.xlabel("Category")
+plt.ylabel("Count")
+plt.show()
 
-# df["city"].value_counts().plot(kind="bar")
-# plt.title("City")
-# plt.xlabel("City")
-# plt.ylabel("Count")
-# plt.show()
+df["city"].value_counts().plot(kind="bar")
+plt.title("City")
+plt.xlabel("City")
+plt.ylabel("Count")
+plt.show()
 
-# df["payment_method"].value_counts().plot(kind="bar")
-# plt.title("Payment Method")
-# plt.xlabel("Payment")
-# plt.ylabel("Count")
-# plt.show()
+df["payment_method"].value_counts().plot(kind="bar")
+plt.title("Payment Method")
+plt.xlabel("Payment")
+plt.ylabel("Count")
+plt.show()
 
 
-# # Q22. Scatterplot: order_value vs delivery_time_min
+# Q22. Scatterplot: order_value vs delivery_time_min
 
-# print("\nQ22 - Order Value vs Delivery Time")
+print("\nQ22 - Order Value vs Delivery Time")
 
-# plt.scatter(df["order_value"], df["delivery_time_min"])
-# plt.xlabel("Order Value")
-# plt.ylabel("Delivery Time")
-# plt.title("Order Value vs Delivery Time")
-# plt.show()
+plt.scatter(df["order_value"], df["delivery_time_min"])
+plt.xlabel("Order Value")
+plt.ylabel("Delivery Time")
+plt.title("Order Value vs Delivery Time")
+plt.show()
 
-# print("Correlation:")
-# print(df["order_value"].corr(df["delivery_time_min"]))
+print("Correlation:")
+print(df["order_value"].corr(df["delivery_time_min"]))
 
 
-# Q23. Scatterplot: delivery_time_min vs satisfaction_score
+Q23. Scatterplot: delivery_time_min vs satisfaction_score
 
-# print("\nQ23 - Delivery Time vs Satisfaction")
+print("\nQ23 - Delivery Time vs Satisfaction")
 
-# plt.scatter(df["delivery_time_min"], df["satisfaction_score"])
-# plt.xlabel("Delivery Time")
-# plt.ylabel("Satisfaction Score")
-# plt.title("Delivery Time vs Satisfaction")
-# plt.show()
+plt.scatter(df["delivery_time_min"], df["satisfaction_score"])
+plt.xlabel("Delivery Time")
+plt.ylabel("Satisfaction Score")
+plt.title("Delivery Time vs Satisfaction")
+plt.show()
 
-# print("Correlation:")
-# print(df["delivery_time_min"].corr(df["satisfaction_score"]))
+print("Correlation:")
+print(df["delivery_time_min"].corr(df["satisfaction_score"]))
 
 
-# # Q24. Satisfaction for returned and non-returned
+# Q24. Satisfaction for returned and non-returned
 
-# print("\nQ24 - Satisfaction by Returned Status")
+print("\nQ24 - Satisfaction by Returned Status")
 
-# sns.boxplot(
-#     x="returned",
-#     y="satisfaction_score",
-#     data=df
-# )
+sns.boxplot(
+    x="returned",
+    y="satisfaction_score",
+    data=df
+)
 
-# plt.xlabel("Returned (0 = No, 1 = Yes)")
-# plt.ylabel("Satisfaction Score")
-# plt.title("Satisfaction by Returned Status")
-# plt.show()
+plt.xlabel("Returned (0 = No, 1 = Yes)")
+plt.ylabel("Satisfaction Score")
+plt.title("Satisfaction by Returned Status")
+plt.show()
 
 
-# Q25. P(orders_today >= 1)
+Q25. P(orders_today >= 1)
 
-# print("\nQ25 - Probability of At Least One Order")
+print("\nQ25 - Probability of At Least One Order")
 
-# p = (df["orders_today"] >= 1).mean()
+p = (df["orders_today"] >= 1).mean()
 
-# print(p)
+print(p)
 
 
-# # Q26. P(orders_today = 0)
+# Q26. P(orders_today = 0)
 
-# print("\nQ26 - P(orders_today = 0)")
+print("\nQ26 - P(orders_today = 0)")
 
-# p = (df["orders_today"] == 0).mean()
+p = (df["orders_today"] == 0).mean()
 
-# print(p)
+print(p)
 
 
-# # Q27. P(orders_today = 1)
+# Q27. P(orders_today = 1)
 
-# print("\nQ27 - P(orders_today = 1)")
+print("\nQ27 - P(orders_today = 1)")
 
-# p = (df["orders_today"] == 1).mean()
+p = (df["orders_today"] == 1).mean()
 
-# print(p)
+print(p)
 
 
-# # Q28. P(orders_today = 2)
+# Q28. P(orders_today = 2)
 
-# print("\nQ28 - P(orders_today = 2)")
+print("\nQ28 - P(orders_today = 2)")
 
-# p = (df["orders_today"] == 2).mean()
+p = (df["orders_today"] == 2).mean()
 
-# print(p)
+print(p)
 
 
-# # Q29. P(orders_today = 3)
+# Q29. P(orders_today = 3)
 
-# print("\nQ29 - P(orders_today = 3)")
+print("\nQ29 - P(orders_today = 3)")
 
-# p = (df["orders_today"] == 3).mean()
+p = (df["orders_today"] == 3).mean()
 
-# print(p)
+print(p)
 
 
-# # Q30. P(orders_today >= 2)
+# Q30. P(orders_today >= 2)
 
-# print("\nQ30 - P(orders_today >= 2)")
+print("\nQ30 - P(orders_today >= 2)")
 
-# p = (df["orders_today"] >= 2).mean()
+p = (df["orders_today"] >= 2).mean()
 
-# print(p)
+print(p)
 
 
-# # Q31. P(returned = 1) and P(returned = 0)
+# Q31. P(returned = 1) and P(returned = 0)
 
-# print("\nQ31 - Returned Probability")
+print("\nQ31 - Returned Probability")
 
-# p_returned = (df["returned"] == 1).mean()
-# p_not_returned = (df["returned"] == 0).mean()
+p_returned = (df["returned"] == 1).mean()
+p_not_returned = (df["returned"] == 0).mean()
 
-# print("P(returned = 1):", p_returned)
-# print("P(returned = 0):", p_not_returned)
+print("P(returned = 1):", p_returned)
+print("P(returned = 0):", p_not_returned)
 
 
-# # Q32. P(satisfaction_score >= 4)
+# Q32. P(satisfaction_score >= 4)
 
-# print("\nQ32 - P(satisfaction >= 4)")
+print("\nQ32 - P(satisfaction >= 4)")
 
-# p = (df["satisfaction_score"] >= 4).mean()
+p = (df["satisfaction_score"] >= 4).mean()
 
-# print(p)
+print(p)
 
 
-# # Q33. P(order_value > 5000)
+# Q33. P(order_value > 5000)
 
-# print("\nQ33 - P(order_value > 5000)")
+print("\nQ33 - P(order_value > 5000)")
 
-# p = (df["order_value"] > 5000).mean()
+p = (df["order_value"] > 5000).mean()
 
-# print(p)
+print(p)
 
 
-# # Q34. P(payment_method = UPI)
+# Q34. P(payment_method = UPI)
 
-# print("\nQ34 - P(UPI)")
+print("\nQ34 - P(UPI)")
 
-# p = (df["payment_method"] == "UPI").mean()
+p = (df["payment_method"] == "UPI").mean()
 
-# print(p)
+print(p)
 
 
 # Q35. P(product_category = Electronics)
 
-# print("\nQ35 - P(Electronics)")
+print("\nQ35 - P(Electronics)")
 
-# p = (df["product_category"] == "Electronics").mean()
+p = (df["product_category"] == "Electronics").mean()
 
-# print(p)
-
-
-# # Q36. P(returned) + P(not returned)
-
-# print("\nQ36 - Probability Check")
-
-# print(p_returned + p_not_returned)
+print(p)
 
 
-# # Q37. P(UPI AND returned)
+# Q36. P(returned) + P(not returned)
 
-# print("\nQ37 - P(UPI AND Returned)")
+print("\nQ36 - Probability Check")
 
-# p = (
-#     (df["payment_method"] == "UPI") &
-#     (df["returned"] == 1)
-# ).mean()
-
-# print(p)
+print(p_returned + p_not_returned)
 
 
-# # Q38. P(returned | Fashion)
+# Q37. P(UPI AND returned)
 
-# print("\nQ38 - P(Returned | Fashion)")
+print("\nQ37 - P(UPI AND Returned)")
 
-# fashion = df[df["product_category"] == "Fashion"]
+p = (
+    (df["payment_method"] == "UPI") &
+    (df["returned"] == 1)
+).mean()
 
-# p = (fashion["returned"] == 1).mean()
-
-# print(p)
-
-
-# # Q39. P(returned | Electronics)
-
-# print("\nQ39 - P(Returned | Electronics)")
-
-# electronics = df[df["product_category"] == "Electronics"]
-
-# p = (electronics["returned"] == 1).mean()
-
-# print(p)
+print(p)
 
 
-# Q40. P(purchase_today | UPI)
+# Q38. P(returned | Fashion)
 
-# print("\nQ40 - P(Purchase Today | UPI)")
+print("\nQ38 - P(Returned | Fashion)")
 
-# upi = df[df["payment_method"] == "UPI"]
+fashion = df[df["product_category"] == "Fashion"]
 
-# p = (upi["purchase_today"] == 1).mean()
+p = (fashion["returned"] == 1).mean()
+
+print(p)
+
+
+# Q39. P(returned | Electronics)
+
+print("\nQ39 - P(Returned | Electronics)")
+
+electronics = df[df["product_category"] == "Electronics"]
+
+p = (electronics["returned"] == 1).mean()
+
+print(p)
+
+
+Q40. P(purchase_today | UPI)
+
+print("\nQ40 - P(Purchase Today | UPI)")
+
+upi = df[df["payment_method"] == "UPI"]
+
+p = (upi["purchase_today"] == 1).mean()
 
 # print(p)
 
